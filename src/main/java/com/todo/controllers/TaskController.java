@@ -59,7 +59,7 @@ public class TaskController {
 
     /*Update a Task*/
     @PutMapping("/task/update/{id}")
-    public ResponseEntity<Task> updateEmployee(@PathVariable(value = "id") Long taskID, @Valid @RequestBody Task task) {
+    public ResponseEntity<Task> updateTask(@PathVariable(value = "id") Long taskID, @Valid @RequestBody Task task) {
 
         Task tsk = dao.findOne(taskID);
         if (tsk == null) {
@@ -75,7 +75,7 @@ public class TaskController {
 
     /*Delete a Task*/
     @DeleteMapping("/task/delete/{id}")
-    public ResponseEntity<SuccessMessage> deleteEmployee(@PathVariable(value = "id") Long taskID) {
+    public ResponseEntity<SuccessMessage> deleteTask(@PathVariable(value = "id") Long taskID) {
 
         Task tsk = dao.findOne(taskID);
         if (tsk == null) {
